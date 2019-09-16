@@ -221,7 +221,8 @@
       //Insert the custom HTML before the truncation character
       if (truncationHTMLContainer) {
         target.nodeValue = target.nodeValue.replace(opt.truncationChar, '');
-        element.innerHTML = opt.truncationHTML;
+        element.innerText = target.nodeValue;
+        element.innerHTML = element.innerHTML + opt.truncationChar + ' ' + truncationHTMLContainer.innerHTML;
       }
 
       //Search produced valid chunks
